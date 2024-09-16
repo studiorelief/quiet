@@ -1,3 +1,78 @@
-body {
-  background-color: red;
+/* Button animation */
+.button_border {
+  opacity: 0;
+}
+
+.button:hover .button_background {
+  background-color: var(--background-color--background-alternate);
+}
+
+.button:hover .button_border {
+  opacity: 1;
+}
+
+.button_border.is-primary {
+  background: conic-gradient(
+    from 90deg,
+    var(--base-color-brand--contrast-1),
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    var(--base-color-brand--contrast-1)
+  );
+}
+
+.button_border.is-secondary {
+  background: conic-gradient(
+    from 90deg,
+    var(--base-color-brand--contrast-2),
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    var(--base-color-brand--contrast-2)
+  );
+}
+
+/* Button Secondary adj */
+.button.is-secondary:hover .button_background {
+  background-color: var(--background-color--background-primary);
+}
+
+/* Button Navbar */
+.button.is-navbar {
+  opacity: 0.8;
+}
+
+.button.is-navbar:hover {
+  opacity: 1;
+}
+
+.swiper-wrapper.is-app-scroll,
+.swiper-wrapper.is-about {
+  transition: linear;
+}
+
+.swiper.is-app-scroll {
+  overflow: visible;
+}
+
+/* Flashlight effect */
+.flashlight {
+  position: absolute;
+  width: 100rem;
+  height: 100rem;
+  border-radius: 100rem;
+  background: radial-gradient(
+    circle,
+    transparent 85%,
+    var(--background-color--background-primary) 70%
+  );
+  pointer-events: none;
+  opacity: 0;
 }
