@@ -53,12 +53,22 @@
   opacity: 1;
 }
 
+/* Swiper */
+
 .swiper-wrapper.is-app-scroll,
 .swiper-wrapper.is-about {
   transition: linear;
 }
 
 .swiper.is-app-scroll {
+  overflow: visible;
+}
+
+/** 
+* TODO: Trouver bug cards
+*/
+
+.swiper-wrapper.is-testimonials {
   overflow: visible;
 }
 
@@ -75,4 +85,41 @@
   );
   pointer-events: none;
   opacity: 0;
+}
+
+/* navbar open */
+.navbar_content:has(> .navbar_mobile-button.w-nav-button.w--open) {
+  backdrop-filter: blur(0rem);
+  background-color: var(--background-color--background-primary);
+  border-bottom: none;
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+}
+
+/* Custom Input Drowpdown */
+.fs_selectcustom_link.w-dropdown-link.w--current {
+  background-color: var(--base-color-brand--0-1-white-opacity);
+  color: var(--text-color--text-primary);
+  font-weight: 700;
+}
+
+/* Custom Blog top */
+
+.blog_collection-list.is-featured {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.blog_collection-list.is-featured > *:nth-child(-n + 2) {
+  /* background-color: red; */
+  grid-row-start: span 1;
+  grid-column-start: span 3;
+  grid-column-end: span 3;
+}
+
+.blog_collection-list.is-featured > *:not(:nth-child(-n + 2)) {
+  /* background-color: blue; */
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+  grid-column-start: span 2;
+  grid-column-end: span 2;
 }

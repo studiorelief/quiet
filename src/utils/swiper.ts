@@ -9,7 +9,7 @@ export function swiperTestimonials() {
   swiperTestimonialsContainers.forEach((container) => {
     new Swiper(container, {
       loop: true,
-      /* centeredSlides: true, */
+      centeredSlides: true,
       slidesPerView: 'auto',
       spaceBetween: 32,
       mousewheel: {

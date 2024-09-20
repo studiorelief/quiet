@@ -1,13 +1,15 @@
 import './index.css';
 
+import { copyBlogLink } from '$utils/blog/copy-link';
 import { hideCmsImage } from '$utils/cms-tricks';
 import { contactFormSelect, submitFormHeading, validateAppUrls } from '$utils/contact/form';
 import { initGlowingButton } from '$utils/glowing-button';
 import { animateHeroLights, animatePortfolioScroll } from '$utils/home/gsap';
 import { animateHeroLineBackground } from '$utils/home/gsap';
 import { loadScript } from '$utils/load-script';
-import { initFlashlightEffect } from '$utils/publishing/reveal-effect';
+// import { initFlashlightEffect } from '$utils/publishing/reveal-effect';
 import { swiperAbout, swiperMarquee, swiperTestimonials } from '$utils/swiper';
+import { vanillaInit } from '$utils/vanilla-tilt';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -17,6 +19,7 @@ window.Webflow.push(() => {
       'https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js'
     ),
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsload@1/cmsload.js'),
+    loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-selectcustom@1/selectcustom.js'),
   ]);
 
   hideCmsImage();
@@ -39,9 +42,10 @@ window.Webflow.push(() => {
   if (window.location.pathname === '/publishing') {
     animateHeroLights();
     swiperTestimonials();
-    if (window.matchMedia('(min-width: 1024px)').matches) {
-      initFlashlightEffect();
-    }
+    vanillaInit();
+    // if (window.matchMedia('(min-width: 1024px)').matches) {
+    //   initFlashlightEffect();
+    // }
   }
 
   /* acquisition */
@@ -57,6 +61,13 @@ window.Webflow.push(() => {
 
   /* contact */
   if (window.location.pathname === '/contact') {
-    contactFormSelect();
+    setTimeout(() => {
+      contactFormSelect();
+    }, 500);
+  }
+
+  /* blog */
+  copyBlogLink();
+  if (window.location.pathname === '/blog') {
   }
 });

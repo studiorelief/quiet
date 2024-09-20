@@ -54,7 +54,8 @@
   "dependencies": {
     "@finsweet/ts-utils": "^0.40.0",
     "gsap": "^3.12.5",
-    "swiper": "^11.1.12"
+    "swiper": "^11.1.12",
+    "vanilla-tilt": "^1.8.1"
   },
   "engines": {
     "pnpm": ">=9"
