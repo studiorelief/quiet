@@ -53,11 +53,15 @@ export function contactFormSelect() {
   const buttonSelectors = [
     '#scale-your-app',
     '#sell-your-app',
+    '#sell-your-app-2',
+    '#sell-your-app-3',
     '#prototype-your-app',
     '#join-our-studio',
   ];
   const linkSelectors = [
     '.is-scale-your-app',
+    '.is-sell-your-app',
+    '.is-sell-your-app',
     '.is-sell-your-app',
     '.is-prototype-your-app',
     '.is-join-our-studio',
@@ -73,8 +77,6 @@ export function contactFormSelect() {
         setTimeout(() => {
           const dropdown = document.querySelector('#custom-select-dropdown');
           dropdown?.classList.remove('w--open');
-          const contactTrigger = document.querySelector('#is-contact-trigger-full-name');
-          (contactTrigger as HTMLElement).click();
         }, 250);
       });
     }

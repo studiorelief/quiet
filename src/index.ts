@@ -20,6 +20,7 @@ window.Webflow.push(() => {
     ),
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsload@1/cmsload.js'),
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-selectcustom@1/selectcustom.js'),
+    loadScript('https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js'),
   ]);
 
   hideCmsImage();
@@ -29,6 +30,9 @@ window.Webflow.push(() => {
   /* form */
   submitFormHeading();
   validateAppUrls();
+  setTimeout(() => {
+    contactFormSelect();
+  }, 500);
 
   /* home */
   if (window.location.pathname === '/') {
@@ -61,9 +65,6 @@ window.Webflow.push(() => {
 
   /* contact */
   if (window.location.pathname === '/contact') {
-    setTimeout(() => {
-      contactFormSelect();
-    }, 500);
   }
 
   /* blog */
