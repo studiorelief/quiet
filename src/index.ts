@@ -46,7 +46,9 @@ window.Webflow.push(() => {
   if (window.location.pathname === '/publishing') {
     animateHeroLights();
     swiperTestimonials();
-    vanillaInit();
+    if (window.matchMedia('(min-width: 991px)').matches) {
+      vanillaInit();
+    }
     // if (window.matchMedia('(min-width: 1024px)').matches) {
     //   initFlashlightEffect();
     // }
