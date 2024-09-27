@@ -22,6 +22,22 @@ export function swiperTestimonials() {
         reverseDirection: true,
       },
       speed: 2000,
+      breakpoints: {
+        768: {
+          slidesPerView: 'auto',
+          spaceBetween: 32,
+        },
+        0: {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          autoplay: {
+            delay: 2000,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: true,
+            reverseDirection: true,
+          },
+        },
+      },
     });
   });
 }

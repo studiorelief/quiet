@@ -2,7 +2,13 @@ import './index.css';
 
 import { copyBlogLink } from '$utils/blog/copy-link';
 import { hideCmsImage } from '$utils/cms-tricks';
-import { contactFormSelect, submitFormHeading, validateAppUrls } from '$utils/contact/form';
+import {
+  contactFormSelect,
+  joinStudioFormSelect,
+  placeholderSelect,
+  submitFormHeading,
+  validateAppUrls,
+} from '$utils/contact/form';
 import { initGlowingButton } from '$utils/glowing-button';
 import { animateHeroLights, animatePortfolioScroll } from '$utils/home/gsap';
 import { animateHeroLineBackground } from '$utils/home/gsap';
@@ -32,7 +38,9 @@ window.Webflow.push(() => {
   validateAppUrls();
   setTimeout(() => {
     contactFormSelect();
+    joinStudioFormSelect();
   }, 500);
+  placeholderSelect();
 
   /* home */
   if (window.location.pathname === '/') {
