@@ -19,7 +19,7 @@ export function animateHeroLights() {
       x: '-100%',
       opacity: 0,
       scrollTrigger: {
-        markers: true,
+        markers: false,
         trigger: heroSection,
         start: '25% 25%',
         end: '200% 25%',
