@@ -12,16 +12,16 @@ export function animateHeroLights() {
   gsap.fromTo(
     heroLights,
     {
-      x: 0,
+      x: 'auto',
       opacity: 1,
     },
     {
       x: '-100%',
       opacity: 0,
       scrollTrigger: {
-        markers: false,
+        markers: true,
         trigger: heroSection,
-        start: '0% 25%',
+        start: '25% 25%',
         end: '200% 25%',
         scrub: true,
       },

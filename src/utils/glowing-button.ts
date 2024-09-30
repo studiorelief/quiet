@@ -17,8 +17,25 @@ export function initGlowingButton() {
       ease: 'linear',
     });
 
+    const colorTl = gsap.timeline({ paused: true, repeat: -1 });
+    colorTl.to(border, {
+      background:
+        'conic-gradient(from 90deg, var(--base-color-brand--contrast-1), transparent, transparent, transparent, transparent, transparent, transparent, var(--base-color-brand--contrast-1))',
+      duration: 2,
+      ease: 'none',
+    });
+    colorTl.to(border, {
+      background:
+        'conic-gradient(from 90deg, var(--base-color-brand--contrast-2), transparent, transparent, transparent, transparent, transparent, transparent, var(--base-color-brand--contrast-2))',
+      duration: 2,
+      ease: 'none',
+    });
+
     button.addEventListener('mouseenter', () => {
       tl.play();
+      if (button.classList.contains('is-secondary')) {
+        colorTl.play();
+      }
     });
 
     button.addEventListener('mouseleave', () => {
@@ -28,6 +45,15 @@ export function initGlowingButton() {
         duration: 0.3,
         ease: 'power2.out',
       });
+      if (button.classList.contains('is-secondary')) {
+        colorTl.pause();
+        gsap.to(border, {
+          background:
+            'conic-gradient(from 90deg, var(--base-color-brand--contrast-2), transparent, transparent, transparent, transparent, transparent, transparent, var(--base-color-brand--contrast-2))',
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      }
     });
   });
 }
