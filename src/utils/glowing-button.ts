@@ -33,7 +33,7 @@ export function initGlowingButton() {
 
     button.addEventListener('mouseenter', () => {
       tl.play();
-      if (button.classList.contains('is-secondary')) {
+      if (border.classList.contains('is-primary') || border.classList.contains('is-secondary')) {
         colorTl.play();
       }
     });
@@ -45,7 +45,7 @@ export function initGlowingButton() {
         duration: 0.3,
         ease: 'power2.out',
       });
-      if (button.classList.contains('is-secondary')) {
+      if (border.classList.contains('is-primary') || border.classList.contains('is-secondary')) {
         colorTl.pause();
         gsap.to(border, {
           background:

@@ -11,21 +11,8 @@
   opacity: 1;
 }
 
+.button_border.is-secondary,
 .button_border.is-primary {
-  background: conic-gradient(
-    from 90deg,
-    var(--base-color-brand--contrast-1),
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    var(--base-color-brand--contrast-1)
-  );
-}
-
-.button_border.is-secondary {
   background: conic-gradient(
     from 90deg,
     var(--base-color-brand--contrast-2),
@@ -46,7 +33,7 @@
 
 /* Button Navbar */
 .button.is-navbar {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .button.is-navbar:hover {
