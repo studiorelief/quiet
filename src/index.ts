@@ -10,13 +10,13 @@ import {
   validateAppUrls,
 } from '$utils/contact/form';
 import { initGlowingButton } from '$utils/glowing-button';
+import { gradientText } from '$utils/gradient-text';
 import { animateHeroLights, animatePortfolioScroll } from '$utils/home/gsap';
 import { animateHeroLineBackground } from '$utils/home/gsap';
 import { loadScript } from '$utils/load-script';
 // import { initFlashlightEffect } from '$utils/publishing/reveal-effect';
 import { swiperAbout, swiperMarquee, swiperTestimonials } from '$utils/swiper';
 import { vanillaInit } from '$utils/vanilla-tilt';
-
 window.Webflow ||= [];
 window.Webflow.push(() => {
   /* global */
@@ -32,6 +32,7 @@ window.Webflow.push(() => {
   hideCmsImage();
   animateHeroLineBackground();
   initGlowingButton();
+  gradientText();
 
   /* form */
   submitFormHeading();
