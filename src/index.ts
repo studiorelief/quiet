@@ -3,8 +3,10 @@ import './index.css';
 import { copyBlogLink } from '$utils/blog/copy-link';
 import { hideCmsImage } from '$utils/cms-tricks';
 import {
+  checkEmailStructure,
+  checkInputFields,
   contactFormSelect,
-  joinStudioFormSelect,
+  // joinStudioFormSelect,
   placeholderSelect,
   submitFormHeading,
   validateAppUrls,
@@ -17,6 +19,7 @@ import { loadScript } from '$utils/load-script';
 // import { initFlashlightEffect } from '$utils/publishing/reveal-effect';
 import { swiperAbout, swiperMarquee, swiperTestimonials } from '$utils/swiper';
 import { vanillaInit } from '$utils/vanilla-tilt';
+
 window.Webflow ||= [];
 window.Webflow.push(() => {
   /* global */
@@ -27,6 +30,7 @@ window.Webflow.push(() => {
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsload@1/cmsload.js'),
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-selectcustom@1/selectcustom.js'),
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js'),
+    loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-formsubmit@1/formsubmit.js'),
   ]);
 
   hideCmsImage();
@@ -39,9 +43,11 @@ window.Webflow.push(() => {
   validateAppUrls();
   setTimeout(() => {
     contactFormSelect();
-    joinStudioFormSelect();
+    // joinStudioFormSelect();
   }, 500);
   placeholderSelect();
+  checkEmailStructure();
+  checkInputFields();
 
   /* home */
   if (window.location.pathname === '/') {

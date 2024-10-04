@@ -143,3 +143,64 @@ export function joinStudioFormSelect() {
     }
   });
 }
+
+export function checkEmailStructure() {
+  const formFields = document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
+    'input[ms-code-convert="link"], textarea[ms-code-convert="link"]'
+  );
+
+  formFields.forEach((field) => {
+    field.addEventListener('input', convertToLink);
+  });
+
+  function convertToLink(event: Event) {
+    const input = event.target as HTMLInputElement | HTMLTextAreaElement;
+
+    const userInput = input.value.trim();
+
+    if (userInput.startsWith('http://') || userInput.startsWith('https://')) {
+      input.value = userInput;
+    } else {
+      input.value = `https://${userInput}`;
+    }
+  }
+}
+
+export function checkInputFields() {
+  const appStoreInput = document.querySelector(
+    '#is-contact-trigger-app-store-url'
+  ) as HTMLInputElement;
+  const googlePlayInput = document.querySelector(
+    '#is-contact-trigger-google-play-url'
+  ) as HTMLInputElement;
+
+  const validExtensions = [
+    '.io',
+    '.fr',
+    '.com',
+    '.app',
+    '.ai',
+    '.org',
+    '.net',
+    '.co',
+    '.us',
+    '.uk',
+  ];
+
+  const checkURL = (input: HTMLInputElement) => {
+    const url = input.value.trim().toLowerCase();
+    const isValid = validExtensions.some((ext) => url.endsWith(ext));
+
+    if (!isValid) {
+      alert('URL not valid');
+    }
+  };
+
+  if (appStoreInput) {
+    appStoreInput.addEventListener('blur', () => checkURL(appStoreInput));
+  }
+
+  if (googlePlayInput) {
+    googlePlayInput.addEventListener('blur', () => checkURL(googlePlayInput));
+  }
+}
