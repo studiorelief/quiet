@@ -1,17 +1,17 @@
 import './index.css';
 
 import { copyBlogLink } from '$utils/blog/copy-link';
-import { hideCmsImage } from '$utils/cms-tricks';
+import { applyCurrentStateToNavbarBlog, hideCmsImage } from '$utils/cms-tricks';
 import {
   checkEmailStructure,
-  checkInputFields,
+  // checkInputFields,
   contactFormSelect,
   // joinStudioFormSelect,
   placeholderSelect,
   submitFormHeading,
   validateAppUrls,
 } from '$utils/contact/form';
-import { initGlowingButton } from '$utils/glowing-button';
+import { initGlowingButton, resetButtonOnLoad } from '$utils/glowing-button';
 import { gradientText } from '$utils/gradient-text';
 import { animateHeroLights, animatePortfolioScroll } from '$utils/home/gsap';
 import { animateHeroLineBackground } from '$utils/home/gsap';
@@ -47,7 +47,8 @@ window.Webflow.push(() => {
   }, 500);
   placeholderSelect();
   checkEmailStructure();
-  checkInputFields();
+  // checkInputFields();
+  resetButtonOnLoad();
 
   /* home */
   if (window.location.pathname === '/') {
@@ -86,6 +87,7 @@ window.Webflow.push(() => {
 
   /* blog */
   copyBlogLink();
-  if (window.location.pathname === '/blog') {
+  if (window.location.pathname.startsWith('/blog')) {
+    applyCurrentStateToNavbarBlog();
   }
 });

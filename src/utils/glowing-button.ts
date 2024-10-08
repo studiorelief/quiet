@@ -57,3 +57,15 @@ export function initGlowingButton() {
     });
   });
 }
+
+export function resetButtonOnLoad() {
+  const loadMoreButton = document.querySelector('#load-more');
+
+  if (loadMoreButton) {
+    loadMoreButton.addEventListener('click', () => {
+      setTimeout(() => {
+        initGlowingButton();
+      }, 500);
+    });
+  }
+}

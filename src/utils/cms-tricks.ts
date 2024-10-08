@@ -12,3 +12,16 @@ export function hideCmsImage() {
     }
   });
 }
+
+export function applyCurrentStateToNavbarBlog() {
+  // Check if the current URL starts with '/blog/'
+  if (window.location.pathname.startsWith('/blog/')) {
+    // Find the navbar link with '/blog' URL
+    const blogNavLink = document.querySelector('.navbar_link[href="/blog"]');
+
+    // If found, add the 'w--current' class
+    if (blogNavLink) {
+      blogNavLink.classList.add('w--current');
+    }
+  }
+}
