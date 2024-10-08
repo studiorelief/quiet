@@ -49,7 +49,10 @@ export function contactFormSelect() {
   });
 
   const buttonSelectors = [
+    '#scale-your-app-nav',
     '#scale-your-app',
+    '#scale-your-app-2',
+    '#sell-your-app-nav',
     '#sell-your-app',
     '#sell-your-app-2',
     '#sell-your-app-3',
@@ -57,6 +60,9 @@ export function contactFormSelect() {
   ];
   const linkSelectors = [
     '.is-scale-your-app',
+    '.is-scale-your-app',
+    '.is-scale-your-app',
+    '.is-sell-your-app',
     '.is-sell-your-app',
     '.is-sell-your-app',
     '.is-sell-your-app',
